@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&display=swap");
+
+/*
+ Modules for convenient
+ */
+
+.primary-text {
+  font-family: "Jockey One", sans-serif;
+  color: #fbf9f1;
+  text-shadow: 0 5px 6px rgba(0, 0, 0, 0.25);
+}
+
+.transition-opacity {
+  transition: opacity 0.5s ease-in-out;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-container {
+  background-color: #aad7d9;
+  padding: 1.5rem 3rem;
+  font-size: 4rem;
+  border-radius: 0.8rem;
+  transform: translateY(-1.3rem);
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+#title {
+  text-transform: capitalize;
+}
+
+.gameplay-container {
+  background-color: #aad7d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70%;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  padding: 4rem 6rem 2rem 6rem;
+}
+
+.gameplay-module {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-label {
+  font-size: 5rem;
+}
+
+.score-container {
+  margin: 4rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  display: flex;
+  background-color: #e5e1da;
+  font-size: 5rem;
+  padding: 1.5rem;
+  color: rgba(0, 0, 0, 0.53);
+  margin-bottom: 7rem;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.score-player {
+  border-radius: 0.8rem 0 0 0.8rem;
+  border-right: 3px solid #bfbbb5;
+}
+
+.score-computer {
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+
+.selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e1da;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+  aspect-ratio: 1/1;
+  border-radius: 0.8rem;
+}
+
+.selection img {
+  max-width: 70%;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+img.player {
+  transform: rotate(45deg);
+}
+
+img.computer {
+  transform: rotate(-45deg) scaleX(-1);
+}
+
+.option-container {
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  max-width: 50%;
+  background-color: #aad7d9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.button {
+  border-radius: 0.8rem;
+  flex-basis: 15%;
+  aspect-ratio: 1/1;
+  background-color: #e5e1da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: none;
+  transform: translateY(0.5rem);
+  cursor: pointer;
+}
+
+.button img {
+  opacity: 0.6;
+  max-width: 80%;
+  transform: translateX(-0.25rem);
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+body {
+  background-color: #92c7cf;
+  position: relative;
+  z-index: 0;
+}
+
+.game-start-btn,
+.restart-button {
+  font-family: "Jockey One", sans-serif;
+  color: white;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #aad7d9;
+  font-size: 4rem;
+  border-radius: 0.8rem;
+  padding: 2rem 6rem;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.25);
+  transition:
+    opacity 0.1s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
+}
+
+.game-start-btn:hover,
+.restart-button:hover {
+  box-shadow: none;
+  cursor: pointer;
+  transform: translate(-50%, -45%);
+}
+
+.game-over-screen {
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.restart-button.hidden {
+  z-index: -2;
+}
+
+.game-over-screen.hidden {
+  z-index: -2;
+}
