@@ -1,5 +1,5 @@
 import { elementInitialize } from "./javascripts/visualManager.js";
-import { enableButtons } from "./javascripts/gameManager.js";
+import { enableButtons, restart } from "./javascripts/gameManager.js";
 
 // ----------------------------- Start Button -----------------------------------
 
@@ -22,3 +22,6 @@ startButton.addEventListener("click", (e) => {
 });
 
 // ------------------------------------------------------------------------------
+
+const restartButton = document.querySelector("#restart-button");
+restartButton.addEventListener("click", restart);

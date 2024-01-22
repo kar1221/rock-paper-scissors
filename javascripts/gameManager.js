@@ -40,14 +40,15 @@ function handleUserClick(event) {
     playerMakeMove("rock");
   }
 
-  // If you click fast enough, two changeTitleAnimated() will overlap together, which will cause some chaos.
-  // Disable button temporary to prevent this.
-  disableButtons();
-  setTimeout(enableButtons, 500);
-
   if (checkGameOver()) {
-    setTimeout(changeTitleAnimated, 700, "Game Over");
+    disableButtons();
+    setTimeout(changeTitleAnimated, 800, "Game Over");
     setTimeout(gameOver, 1300);
+  } else {
+    // If you click fast enough, two changeTitleAnimated() will overlap together, which will cause some chaos.
+    // Disable button temporary to prevent this.
+    disableButtons();
+    setTimeout(enableButtons, 500);
   }
 }
 
@@ -104,4 +105,19 @@ export function disableButtons() {
   buttons.forEach((button) => {
     button.removeEventListener("click", handleUserClick);
   });
+}
+
+export function restart() {
+  const playerScore = document.querySelector("#player-score");
+  const computerScore = document.querySelector("#computer-score");
+
+  playerScore.textContent = "0";
+  computerScore.textContent = "0";
+
+  const gameOverScreen = document.querySelector(".game-over-screen");
+  gameOverScreen.classList.add("hidden");
+
+  changeTitleAnimated("Choose your weapon");
+  disableButtons();
+  setTimeout(enableButtons, 500);
 }
